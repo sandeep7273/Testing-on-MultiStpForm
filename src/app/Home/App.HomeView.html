@@ -1,0 +1,60 @@
+<div class="link-button">
+        <button class="active"  >Home</button><br>
+        <button (click)="addUser(User)" [disabled]="!(UserModel.formSignUpGroup.valid)"
+         [routerLink]="['/Step2']" >Registration</button><br>
+        <button   >Education</button><br>
+        <button  >Summary</button><br>
+    </div>
+
+
+
+<div>
+<form  [formGroup]="UserModel.formSignUpGroup">
+   <div class="row"> <div class="col-md-4"> User Name : </div> 
+   <div class="col-md-8"> 
+       <input type="text" [(ngModel)]="UserModel.UserName" formControlName="UserNameControl">
+       <span *ngIf="UserModel.formSignUpGroup.dirty"  
+                         [hidden]="!hasError('UserNameControl','required')" id="user">*UserName Required</span>
+    </div> </div><br>
+    <div class="row"> <div class="col-md-4"> User Contact : </div>
+     <div class="col-md-8">
+          <input type="text" [(ngModel)]="UserModel.UserContact" formControlName="UserContactControl">
+          <span *ngIf="UserModel.formSignUpGroup.dirty"
+                            [hidden]="!hasError('UserContactControl', 'required')"
+                            id="numlock">Mobile Number is Required</span>
+          <span *ngIf="UserModel.formSignUpGroup.dirty" 
+         [hidden]="!hasError('UserContactControl', 'pattern')"> *Enter Correct Mobile Number Only+</span>
+            </div></div><br>
+    <div class="row"> <div class="col-md-4"> User Email : </div> 
+    <div class="col-md-8"> 
+        <input type="email" name="email" required [(ngModel)]="UserModel.UserEmail"
+         formControlName="UserEmailControl">
+       
+        <span *ngIf="UserModel.formSignUpGroup.dirty"  
+              [hidden]="!hasError('UserEmailControl','required')" id="user">*User Email Required</span>
+        <span *ngIf="UserModel.formSignUpGroup.dirty"  
+             [hidden]="!hasError('UserEmailControl','pattern')" id="user">*correct email Required</span>
+                        </div></div><br>
+<!-- <div> <input type="button" (click)="Add()" value="Add"> </div> -->
+
+<input (click)="addUser(User)" [disabled]="!(UserModel.formSignUpGroup.valid)"    
+[routerLink]="['/Step2']" type="button" value="Next"/><br>
+
+</form>
+</div>
+
+<!-- {{UserModel.UserName}}<br>
+{{UserModel.UserContact}}<br>
+{{UserModel.UserEmail}}<br>
+<table>
+  <tr>
+    <td>User Name</td>
+    <td>User Contact</td>
+    <td>User Email</td>
+  </tr>
+  <tr *ngFor="let cust of UserModels">
+    <td>{{cust.UserName}}</td>
+    <td>{{cust.UserContact}}</td>
+    <td>{{cust.UserEmail}}</td>
+  </tr>
+</table> -->

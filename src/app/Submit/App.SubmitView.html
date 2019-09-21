@@ -1,0 +1,74 @@
+<div class="link-button">
+        <button class="active" [routerLink]="['/Step1']" >Home</button><br>
+        <button class="active" >Registration</button><br>
+        <button class="active"  >Education</button><br>
+        <button class="active"  >Summary</button><br>
+    </div>
+<div>
+    <h4>Personal Details provided by you are as below:- </h4>
+
+     <table class="table">
+            <thead class="thead-light">
+                <td>Name</td>
+                <td>Contact </td>
+                <td>Email</td>
+            </thead>
+            <tr *ngFor="let cust of items">
+                <td>{{cust.UserName}}</td>
+                <td>{{cust.UserContact}}</td>
+                <td>{{cust.UserEmail}}</td>
+              </tr>
+              </table>
+</div>
+<div>
+        <h4>Address Details provided by you are as below:- </h4>
+    
+         <table class="table">
+                <thead class="thead-light">
+                    <td>House Number</td>
+                    <td>City</td>
+                    <td>Distt</td>
+                    <td>Pincode</td>
+                    <td>State</td>
+                </thead>
+                <tr *ngFor="let cust of items">
+                    <td>{{cust.AddressHouse}}</td>
+                    <td>{{cust.AddressCity}}</td>
+                    <td>{{cust.AddressDistt}}</td>
+                    <td>{{cust.AddressPincode}}</td>
+                    <td>{{cust.AddressState}} </td>
+                    
+        
+                  </tr>
+                  </table>
+    </div>
+<div>
+
+
+
+<h4>Educational Details provided by you are as below:- </h4>
+
+     <table class="table">
+            <thead class="thead-light">
+                <td>Education</td>
+                <td>Specialization</td>
+                <td>University Name</td>
+                <td>Markes Obtained</td>
+                <td>Maximum Marks</td>
+                <td>Year of Passing</td>
+            </thead>
+            <tr *ngFor="let cust of items">
+                <td>{{cust.EduStandard}}</td>
+                <td>{{cust.EduStream}}</td>
+                <td>{{cust.EduUniversity}}</td>
+                <td>{{cust.EduMarksObt}}</td>
+                <td>{{cust.EduMarksMax}}</td>
+                <td>{{cust.EduYear}}</td>
+                
+    
+              </tr>
+              </table>
+</div>
+<!-- <div *ngFor="let cust of items ">
+    {{cust.imgUrl}}
+</div> -->

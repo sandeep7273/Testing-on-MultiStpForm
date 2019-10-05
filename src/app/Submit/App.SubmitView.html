@@ -1,17 +1,20 @@
 <div class="link-button">
         <button class="active" [routerLink]="['/Step1']" >Home</button><br>
-        <button class="active" >Registration</button><br>
-        <button class="active"  >Education</button><br>
-        <button class="active"  >Summary</button><br>
+        <button class="active" [routerLink]="['/Step2']">Registration</button><br>
+        <button class="active" [routerLink]="['/Step3']">Education</button><br>
+        <button class="active" [routerLink]="['/Step4']" >Summary</button><br>
     </div>
 <div>
     <h4>Personal Details provided by you are as below:- </h4>
-
-     <table class="table">
+ <div *ngFor="let file of filelist">
+     <p>{{file.fileName}}</p>
+ </div>
+   
+    <table class="table">
             <thead class="thead-light">
-                <td>Name</td>
-                <td>Contact </td>
-                <td>Email</td>
+                <th>Name</th>
+                <th>Contact </th>
+                <th>Email</th>
             </thead>
             <tr *ngFor="let cust of items">
                 <td>{{cust.UserName}}</td>
@@ -25,11 +28,11 @@
     
          <table class="table">
                 <thead class="thead-light">
-                    <td>House Number</td>
-                    <td>City</td>
-                    <td>Distt</td>
-                    <td>Pincode</td>
-                    <td>State</td>
+                    <th>House Number</th>
+                    <th>City</th>
+                    <th>Distt</th>
+                    <th>Pincode</th>
+                    <th>State</th>
                 </thead>
                 <tr *ngFor="let cust of items">
                     <td>{{cust.AddressHouse}}</td>
@@ -50,12 +53,12 @@
 
      <table class="table">
             <thead class="thead-light">
-                <td>Education</td>
-                <td>Specialization</td>
-                <td>University Name</td>
-                <td>Markes Obtained</td>
-                <td>Maximum Marks</td>
-                <td>Year of Passing</td>
+                <th>Education</th>
+                <th>Specialization</th>
+                <th>University Name</th>
+                <th>Markes Obtained</th>
+                <th>Maximum Marks</th>
+                <th>Year of Passing</th>
             </thead>
             <tr *ngFor="let cust of items">
                 <td>{{cust.EduStandard}}</td>
@@ -69,6 +72,7 @@
               </tr>
               </table>
 </div>
-<!-- <div *ngFor="let cust of items ">
-    {{cust.imgUrl}}
-</div> -->
+
+<div>
+    <button type="button" [routerLink]="['/Step5']"  (click)="AddToServer()">Submit</button>
+</div>

@@ -11,24 +11,37 @@ import { FormService } from '../form.service';
 import { RegistrationComponent } from '../Registration/App.RegistrationComponent';
 import { EducationComponent } from '../Education/App.EducationComponent';
 import { SubmitComponent } from '../Submit/App.SubmitComponent';
+import { AngularFireModule} from '@angular/fire';
+import { AngularFireDatabaseModule} from '@angular/fire/database';
+import { AngularFireStorageModule} from '@angular/fire/storage';
+import { environment } from 'src/environments/environment';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+
+// import { AdminComponent } from '../Admin/App.AdminComponent';
+import { GridComponent } from '../Utility/App.GridComponenet';
+import { UserListComponent } from '../Admin/App.Admin-listComponent';
+import { MultiImagesDirective} from '../multi-images.directive';
+import { UploadTaskComponent } from '../upload-task/upload-task.component';
 
 @NgModule({
   declarations: [
     MasterComponent, HomeComponent,
-    RegistrationComponent, EducationComponent,
-    SubmitComponent
+    RegistrationComponent, EducationComponent,MultiImagesDirective,
+    SubmitComponent,GridComponent,UserListComponent,UploadTaskComponent,
   ],
   imports: [
     BrowserModule,FormsModule,
     RouterModule.forRoot(MainRouts),
-    HttpClientModule, ReactiveFormsModule
+    HttpClientModule, ReactiveFormsModule,AngularFirestoreModule,
+    AngularFireDatabaseModule,AngularFireStorageModule,
 
-  ],
+    AngularFireModule.initializeApp(environment.fireBase),
+    
+    ],
   
   providers: [
-    FormService
+    FormService 
   ],
-
 
   bootstrap: [MasterComponent]
 })

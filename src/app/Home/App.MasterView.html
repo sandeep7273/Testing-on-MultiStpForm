@@ -6,7 +6,7 @@
       <h1>Welcome To Registration Page</h1>
   </div></div>
   <div class="row text-center">
-      <div class="col-md-3 side-bar">
+      <div class="col-md-2 side-bar">
         <div class="card">
         <div class="card-body">
                     
@@ -22,14 +22,15 @@
         <div>
         <button [routerLink]="['/Step4']">Summary</button><br>
         </div>
+        <div>
+          <button [routerLink]="['/Step5']">Admin</button><br>
+        </div>
               </div>
-              
             </div>
           </div>
-      <div class="col-md-9">
-          <div class="row text-initial">
+      <div class="col-md-8">
+          <div class=" text-initial margin-left">
 <router-outlet class="outlet"></router-outlet>
-              
           </div>
       </div>
   </div>

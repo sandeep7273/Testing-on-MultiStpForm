@@ -1,87 +1,74 @@
 <div class="link-button">
-    <button class="active" >Home</button><br>
-    <button class="active"   >Registration</button><br>
-    <button (click)="addUser(User)" [disabled]="!(UserModel.formSignUpGroup.valid)"  [routerLink]="['/Step3']" >Education</button><br>
-    <button >Summary</button><br>
+    <button class="active" [routerLink]="['/Step1']">Home</button><br>
+    <button class="active" [routerLink]="['/Step2']"  >Registration</button><br>
+    <button  [routerLink]="['/Step3']" >Education</button><br>
+    <button [routerLink]="['/Step4']">Summary</button><br>
 </div>
 
-
 <div>
-    <form   [formGroup]="UserModel.formSignUpGroup">
+    <form   [formGroup]="formSignUpGroup">
         <div class="row"> <div class="col-md-4"> User Name : </div> 
-        <div class="col-md-8"> <input  type="text" 
+        <div class="col-md-8"> <input  type="text"  disabled
             *ngFor="let item of items"
-             value="{{ item.UserName }}"></div>
+             value="{{ item.UserName}}"></div>
      </div><br>
-     
-        
         <div class="row"> <div class="col-md-4"> User Contact : </div> 
         <div class="col-md-8"> <input type="number" disabled
             *ngFor="let item of items"
             value="{{ item.UserContact }}"
             ></div></div><br>
-        
         <div class="row"> <div class="col-md-4"> User Email : </div> 
         <div class="col-md-8"> <input type="email"  disabled
             *ngFor="let item of items"
             value="{{ item.UserEmail }}"
             ></div></div><br>
-       
         <div class="row"> <div class="col-md-4"> User Password : </div> 
         <div class="col-md-8">
              <input type="password" 
             [(ngModel)]="UserModel.UserPassword" formControlName="UserPasswordControl">
-            <span *ngIf="UserModel.formSignUpGroup.dirty"  
+            <span *ngIf="formSignUpGroup.dirty"  
                          [hidden]="!hasError('UserPasswordControl','required')" id="user">*Password Required</span>
-            <span *ngIf="UserModel.formSignUpGroup.dirty"  
+            <span *ngIf="formSignUpGroup.dirty"  
                          [hidden]="!hasError('UserPasswordControl','pattern')" id="user">*Password patten is Required</span>
         </div> </div><br>
-        
         <div class="row"> <div class="col-md-4"> H No  : </div> 
         <div class="col-md-8"> <input type="text" 
             [(ngModel)]="UserModel.AddressHouse" formControlName="UserHouseControl">
-            <span *ngIf="UserModel.formSignUpGroup.dirty"  
+            <span *ngIf="formSignUpGroup.dirty"  
                          [hidden]="!hasError('UserHouseControl','required')" id="user">*House Number Required</span>
         </div></div><br>
-        
         <div class="row"> <div class="col-md-4"> Landmark : </div> 
         <div class="col-md-8"> <input type="text" 
             [(ngModel)]="UserModel.AddressLandmark" [ngModelOptions]="{standalone: true}">
         </div></div><br>
-
         <div class="row"> <div class="col-md-4"> City/Village : </div> 
         <div class="col-md-8"> <input type="text" 
             [(ngModel)]="UserModel.AddressCity" formControlName="UserCityControl">
-            <span *ngIf="UserModel.formSignUpGroup.dirty"  
+            <span *ngIf="formSignUpGroup.dirty"  
                          [hidden]="!hasError('UserCityControl','required')" id="user">*City is Required</span>
         </div></div><br>
-        
         <div class="row"> <div class="col-md-4"> Area Pincode : </div> 
         <div class="col-md-8"> <input type="number" 
             [(ngModel)]="UserModel.AddressPincode" formControlName="UserPinControl">
-            <span *ngIf="UserModel.formSignUpGroup.dirty"  
+            <span *ngIf="formSignUpGroup.dirty"  
                          [hidden]="!hasError('UserPinControl','required')" id="user">*Pincode Required</span>
-            <span *ngIf="UserModel.formSignUpGroup.dirty"  
+            <span *ngIf="formSignUpGroup.dirty"  
                          [hidden]="!hasError('UserPinControl','pattern')" id="user">*Correct Pincode is Required</span>
         </div></div><br>
-        
         <div class="row"> <div class="col-md-4"> Distict : </div> 
         <div class="col-md-8"> <input type="text" 
             [(ngModel)]="UserModel.AddressDistt" formControlName="UserDisttControl">
-            <span *ngIf="UserModel.formSignUpGroup.dirty"  
+            <span *ngIf="formSignUpGroup.dirty"  
                          [hidden]="!hasError('UserDisttControl','required')" id="user">*Distt is Required</span>
         </div></div><br>
-        
         <div class="row"> <div class="col-md-4"> State : </div> 
         <div class="col-md-8"> <input type="text" 
             [(ngModel)]="UserModel.AddressState" formControlName="UserStateControl">
-            <span *ngIf="UserModel.formSignUpGroup.dirty"  
+            <span *ngIf="formSignUpGroup.dirty"  
                          [hidden]="!hasError('UserStateControl','required')" id="user">*State is Required</span>
         </div></div><br>
-        
-        <!-- <div> <input (click)="addToNext()" type="button" value="Add"> </div> -->
-       
-        <input (click)="addUser(User)" [disabled]="!(UserModel.formSignUpGroup.valid)" [routerLink]="['/Step3']" type=button value="Next"/><br>
+
+        <input (click)="addUser()" [disabled]="!(formSignUpGroup.valid)" [routerLink]="['/Step3']" type=button value="Next"/><br>
     </form>
 </div>
 

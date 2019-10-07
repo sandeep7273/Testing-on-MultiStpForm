@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { map } from 'rxjs/operators';
 import { FormService } from '../form.service';
 import { User } from '../Home/App.Home.model';
+import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';  
  
 @Component({
   selector: 'app-customers-list',
@@ -17,7 +18,14 @@ imgSrc :any = null;
 selectedImage : any = null;
 downloadedUrls :any[];
  
-  constructor(private formService: FormService) { }
+  constructor(private formService: FormService, config: NgbCarouselConfig) { 
+    config.interval = 4000;  
+    config.wrap = true;  
+    config.keyboard = false;  
+    config.pauseOnHover = false;  
+    config.showNavigationArrows = true;
+    config.showNavigationIndicators = false;
+  }
  
   ngOnInit() {
     this.getCustomersList();

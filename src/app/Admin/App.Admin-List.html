@@ -26,12 +26,24 @@
           <label> {{url.name}}</label> 
           <img src=[url.i]>
         </div> -->
-        <div *ngFor="let url of user.downloadURLs; let i= index;" class="imagestyle">
+        <!-- <div *ngFor="let url of user.downloadURLs; let i= index;" class="imagestyle">
             <img  src="{{user.downloadURLs[i]}}" width="350px" height="250px" class="imagestyle">
-          </div>
+          </div> -->
         <!-- <div >
           <label> URL Array: {{user.downloadURLs}}</label> 
         </div> -->
+        <div class='container-fluid'>  
+         
+          <div class='col-12'>  
+              <ngb-carousel>  
+                  <ng-template  *ngFor="let url of user.downloadURLs; let i= index;"  ngbSlide>  
+                      <img src="{{user.downloadURLs[i]}}" width="350px" height="250px">  
+                     
+                  </ng-template>  
+                </ngb-carousel>  
+              </div>  
+            
+            </div>
         <div>
           <label>First Name: </label> {{user.name}}
         </div>
@@ -68,8 +80,9 @@
         <span class="button is-small btn-danger" (click)='deleteCustomer()'>Delete</span>
        
         <hr/>
-      
-    
+       
+
+    <!-- <app-carousel></app-carousel> -->
     </div>
 <div style="margin-top:20px;">
   <button type="button" class="button btn-danger" (click)='deleteCustomers()'>Delete All</button>

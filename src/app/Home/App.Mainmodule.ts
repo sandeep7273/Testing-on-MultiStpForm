@@ -16,8 +16,7 @@ import { AngularFireDatabaseModule} from '@angular/fire/database';
 import { AngularFireStorageModule} from '@angular/fire/storage';
 import { environment } from 'src/environments/environment';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
-
-// import { AdminComponent } from '../Admin/App.AdminComponent';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';  
 import { GridComponent } from '../Utility/App.GridComponenet';
 import { UserListComponent } from '../Admin/App.Admin-listComponent';
 import { MultiImagesDirective} from '../multi-images.directive';
@@ -30,11 +29,10 @@ import { UploadTaskComponent } from '../upload-task/upload-task.component';
     SubmitComponent,GridComponent,UserListComponent,UploadTaskComponent,
   ],
   imports: [
-    BrowserModule,FormsModule,
+    BrowserModule,FormsModule,NgbModule,
     RouterModule.forRoot(MainRouts),
     HttpClientModule, ReactiveFormsModule,AngularFirestoreModule,
     AngularFireDatabaseModule,AngularFireStorageModule,
-
     AngularFireModule.initializeApp(environment.fireBase),
     
     ],

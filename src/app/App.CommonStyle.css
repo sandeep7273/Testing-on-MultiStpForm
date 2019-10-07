@@ -69,6 +69,16 @@ table.table tr td {
     background: white;
     margin: 10px 0;
 }
+
+/* Carousel CSS */
+::ng-deep .carousel {
+    /* position: relative; */
+    width: 350px !important;
+    /* overflow: hidden; */
+}
+
+
+
 /* }
     &.hovering {
         border: 2px solid #f16624;

@@ -4,7 +4,7 @@ import { HttpClient , HttpEventType} from '@angular/common/http';
 import { Output, EventEmitter } from '@angular/core';
 import {NgForm, FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
 import { User } from '../Home/App.Home.model';
-import { AngularFireStorage } from '@angular/fire/storage';
+import { AngularFireStorage, AngularFireUploadTask} from '@angular/fire/storage';
 import { Observable, Subject, ReplaySubject, from, of, range } from 'rxjs';
 import { finalize } from 'rxjs/operators';
 import { UserData } from '../Submit/App.SubmitData';
@@ -39,9 +39,12 @@ export class EducationComponent implements OnChanges{
   uploads = [];
   filelist :any;
   files: Observable<any>;
+  percentage: Observable<number>;
+  task: AngularFireUploadTask;
   imgSrc :{
     name : string;
   }
+ 
 
   // files: File[] = [];
 
@@ -87,7 +90,10 @@ export class EducationComponent implements OnChanges{
       // const selectedImage = this.selectedImage[i];
       var filePath = `${file.name.split('.').slice(0, -1).join('.')}_${new Date().getTime()}`;
       const fileRef = this.storage.ref(filePath);
-      this.storage.upload(filePath, file).snapshotChanges().pipe(
+      this.task = this.storage.upload(filePath, file);
+      this.percentage = this.task.percentageChanges();
+
+      this.task.snapshotChanges().pipe(
         finalize(() => {
           
           fileRef.getDownloadURL().subscribe((url) => { 
@@ -95,6 +101,9 @@ export class EducationComponent implements OnChanges{
             console.log(this.downloadURLs);
           });
         })
+
+
+
 
         //   fileRef.getDownloadURL().subscribe((url) => {
         //     // formValue['imageUrl'] = url;

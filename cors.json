@@ -1,0 +1,8 @@
+[
+    {
+      "origin": ["https://multistepform-b7bd8.firebaseapp.com"],
+      "responseHeader": ["Content-Type"],
+      "method": ["GET", "HEAD", "DELETE"],
+      "maxAgeSeconds": 3600
+    }
+]

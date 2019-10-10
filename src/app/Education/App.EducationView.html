@@ -31,7 +31,11 @@
     <upload-task [file]="file"></upload-task>
   </div> -->
   <div *ngFor="let upload of uploads">
-	<span>Upload of {{upload.fileName}}</span>
+    <span>Upload of {{upload.fileName}}</span>
+    <div *ngIf="percentage | async as pct">
+        <progress [value]="pct" max="100"></progress>
+        {{ pct | number }}%
+      </div>
 	<!-- <p> Progress: {{upload.percentage | async}}</p> -->
 </div>
   <div><button type="button" (click)=UploadtoStorag()>Upload</button></div>

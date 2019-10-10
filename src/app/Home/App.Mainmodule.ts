@@ -18,15 +18,16 @@ import { environment } from 'src/environments/environment';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';  
 import { GridComponent } from '../Utility/App.GridComponenet';
-import { UserListComponent } from '../Admin/App.Admin-listComponent';
-import { MultiImagesDirective} from '../multi-images.directive';
+
 import { UploadTaskComponent } from '../upload-task/upload-task.component';
+import { AdminMainComponent } from '../Admin/App.Admin.MainComponenet';
+import { UserListComponent } from '../Admin/App.Admin-listComponent';
 
 @NgModule({
   declarations: [
-    MasterComponent, HomeComponent,
-    RegistrationComponent, EducationComponent,MultiImagesDirective,
-    SubmitComponent,GridComponent,UserListComponent,UploadTaskComponent,
+    MasterComponent, HomeComponent,AdminMainComponent,UserListComponent, 
+    RegistrationComponent, EducationComponent,
+    SubmitComponent,GridComponent,UploadTaskComponent,
   ],
   imports: [
     BrowserModule,FormsModule,NgbModule,

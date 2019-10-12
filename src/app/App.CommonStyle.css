@@ -1,4 +1,7 @@
-
+/* .editor{
+    display: flex !important;
+    /* height: 500px; */
+/* }  */
 .logo-img {
     width: 80px;
 }
@@ -73,8 +76,9 @@ table.table tr td {
 /* Carousel CSS */
 ::ng-deep .carousel {
     /* position: relative; */
-    width: 350px !important;
-    /* overflow: hidden; */
+    width: 150px !important;
+    height: 150px !important;
+     /* overflow: hidden; */
 }
 
 

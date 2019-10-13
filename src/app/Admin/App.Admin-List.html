@@ -1,13 +1,13 @@
        
 
     
-    <div *ngIf="user" class="editor">   
+    <div *ngIf="user">   
       <div class='container-fluid'>  
           
            <div  class='col-12'>  
                <ngb-carousel >  
                    <ng-template  *ngFor="let url of user.downloadURLs; let i= index;"  ngbSlide>  
-                       <img  src="{{user.downloadURLs[i]}}" width="150px" height="150px">  
+                       <img class="editor" src="{{user.downloadURLs[i]}}" width="150px" height="150px">  
                       
                    </ng-template>  
                  </ngb-carousel>  
@@ -15,7 +15,7 @@
              
              </div>
              <div >
-         <div >
+         <div>
            <label>First Name: </label> {{user.name}}
          </div>
          <div>

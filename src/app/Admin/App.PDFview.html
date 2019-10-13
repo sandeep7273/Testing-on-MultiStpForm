@@ -1,0 +1,66 @@
+       
+
+    
+    <div *ngIf="user">   
+        <div class='container-fluid'>  
+            
+             <div  class='col-12' class="image-styling">  
+                  
+                     <div  *ngFor="let url of user.downloadURLs; let i= index;" style="display: flex">  
+                        <div>
+                        <img class="editor" src="{{user.downloadURLs[i]}}" width="150px" height="150px">  
+                        </div>
+                     </div>  
+                     
+                 </div>  
+               
+               </div>
+               <div >
+           <div>
+             <label>First Name: </label> {{user.name}}
+           </div>
+           <div>
+             <label>Contact: </label> {{user.contact}}
+           </div>
+           <div>
+             <label>Email: </label> {{user.email}}
+           </div>
+           <div>
+             <label>Password: </label> {{user.Password}}
+           </div>
+           <div>
+             <label>House: </label> {{user.House}}
+           </div>
+           <div>
+             <label>Landmark: </label> {{user.Landmark}}
+           </div>
+           <div>
+             <label>City: </label> {{user.City}}
+           </div>
+           <div>
+             <label>Pincode: </label> {{user.Pincode}}
+           </div>
+           <div>
+             <label>Standard: </label> {{user.Standard}}
+           </div>
+           <div>
+             <label>Year: </label> {{user.Year}}
+           </div>
+           <div>
+             <label>Password: </label> {{user.Password}}
+           </div>
+          
+          </div>
+          
+    
+       <!-- <app-carousel></app-carousel> -->
+       <!-- </div>
+       <button class="button is-small btn-danger" (click)='deleteCustomer()'>Delete</button>
+   -->
+       <div style="margin-top:20px;">
+        <button type="button" class="button btn-primary" (click)='downloadPDF()'>PDf individual</button>
+      </div>
+      <hr/>
+      <br>
+      <br>
+      

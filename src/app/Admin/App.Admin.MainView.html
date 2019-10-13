@@ -1,11 +1,16 @@
 <h3>Users Data</h3>
-<div   #content>
+<div  #content>
 <div *ngFor="let user of items" >
-  <div>
-  <App-Admin [user]=user ></App-Admin>
+  <div id="userText">
+  <!-- <App-Admin [user]=user ></App-Admin> -->
+  <app-PDF [user]=user></app-PDF>
   </div>
   </div>
 
+</div>
+<div style="margin-top:20px;">
+  <button type="button" class="button btn-primary" (click)='testingPDF()'>Testing PDf</button>
+  
 </div>
 <div style="margin-top:20px;">
   <button type="button" class="button btn-primary" (click)='downloadPDF()'>Download as PDf</button>

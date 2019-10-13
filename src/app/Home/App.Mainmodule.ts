@@ -22,11 +22,11 @@ import { GridComponent } from '../Utility/App.GridComponenet';
 import { UploadTaskComponent } from '../upload-task/upload-task.component';
 import { AdminMainComponent } from '../Admin/App.Admin.MainComponenet';
 import { UserListComponent } from '../Admin/App.Admin-listComponent';
-
+import {PDFComponent} from '../Admin/App.PDFComponent';
 @NgModule({
   declarations: [
     MasterComponent, HomeComponent,AdminMainComponent,UserListComponent, 
-    RegistrationComponent, EducationComponent,
+    RegistrationComponent, EducationComponent,PDFComponent,
     SubmitComponent,GridComponent,UploadTaskComponent,
   ],
   imports: [
